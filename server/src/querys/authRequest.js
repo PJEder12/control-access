@@ -1,20 +1,38 @@
 const routerStatement = require('express');
 
 const router = routerStatement.Router();
-const { database } = require('../config/dbConfig');
+// const { database } = require('../config/dbConfig');
 
-router.get('/', (req, res) => {
-    res.send('<h1>Hola</h1>');
-    let sampleQuery =
-    'SELECT * FROM MUESTRAS_PRODUCCION'
-
-  let dbQuery = database.query(
-    sampleQuery,
-    async (err, result) => {
-      if (err) throw err
-      console.log(result);
+//LOGIN PART:
+router.post('/api/login', (req, res, next) => {
+  console.log(req.body);
+  passport.authenticate('local.login', (err, user, info) => {
+    if (err) throw err;
+    if (user) {
+      req.login(user, (err) => {
+        if (err) throw err;
+        res.end(JSON.stringify('EXITO: EL USUARIO ESTÁ AUTENTICADO'));
+      });
+    } else {
+      res.end(JSON.stringify('ERROR'));
     }
-  );
+  })(req, res, next);
+});
+
+//ROUTE TO KNOW IF THE USER IS AUTH OR NOT:
+router.get('/api/isAuth', (req, res) => {
+  res.end(JSON.stringify(req.user));
+  // res.end(JSON.stringify(req.isAuthenticated()));
+});
+
+//LOG OUT
+router.post('/api/logout', (req, res) => {
+  req.logout();
+  req.session.destroy((err) => {
+    res.clearCookie('connect.sid');
+    // Don't redirect, just print text
+    res.send('Logged out');
+  });
 });
 
 module.exports = router;
