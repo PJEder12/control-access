@@ -4,10 +4,13 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Axios from 'axios';
 
 //Pages:
 import Home from './pages/Home';
 import Login from './pages/Login';
+
+Axios.defaults.withCredentials = true;
 
 const App = () => {
   return (

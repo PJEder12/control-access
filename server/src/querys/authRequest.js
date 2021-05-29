@@ -1,7 +1,8 @@
 const routerStatement = require('express');
 
 const router = routerStatement.Router();
-// const { database } = require('../config/dbConfig');
+const { database } = require('../config/dbConfig');
+const passport = require('passport');
 
 //LOGIN PART:
 router.post('/api/login', (req, res, next) => {

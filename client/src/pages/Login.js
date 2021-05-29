@@ -17,19 +17,19 @@ const Login = () => {
     e.preventDefault();
     console.log(username_ref.current.value);
     console.log(password_ref.current.value);
-    // if (username && password) {
-    //   Axios.post(url_login, {
-    //     username,
-    //     password,
-    //   }).then((response) => {
-    //     const is_auth = response.data;
-    //     if (is_auth === "ERROR") {
-    //       console.log("usuario o contraseña incorrecta");
-    //     } else {
-    //       console.log('SESIÓN INICIADA');
-    //     }
-    //   });
-    // }
+    if (username && password) {
+      Axios.post(url_login, {
+        username,
+        password,
+      }).then((response) => {
+        const is_auth = response.data;
+        if (is_auth === "ERROR") {
+          console.log("usuario o contraseña incorrecta");
+        } else {
+          console.log('SESIÓN INICIADA');
+        }
+      });
+    }
   };
   return (
     <div>

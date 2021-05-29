@@ -17,20 +17,20 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
-// app.use(
-//   cors({
-//     origin: 'http://3.91.114.60', // <-- location of the react app were connecting to
-//     credentials: true,
-//   })
-// );
-// app.use(
-//   session({
-//     secret: 'asdf33g4w4hghjkuil8saef345',
-//     resave: false,
-//     saveUninitialized: false,
-//     store: new MySQLStore(dbCredentials),
-//   })
-// );
+app.use(
+  cors({
+    origin: 'http://localhost:3000', // <-- location of the react app were connecting to
+    credentials: true,
+  })
+);
+app.use(
+  session({
+    secret: 'asdf33g4w4hghjkuil8saef345',
+    resave: false,
+    saveUninitialized: false,
+    store: new MySQLStore(dbCredentials),
+  })
+);
 app.use(cookieParser('asdf33g4w4hghjkuil8saef345'));
 app.use(passport.initialize());
 app.use(passport.session());

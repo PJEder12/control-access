@@ -22,6 +22,9 @@ passport.use(
 
             if (err) throw err;
 
+            const encryptedPassword = await bcrypt.hash('admin', 10);
+            console.log(encryptedPassword);
+
             const user_info = await result[0];
             
             if (result[0] == null) {
