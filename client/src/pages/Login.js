@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { Row, Col, Form, Button, Card } from "react-bootstrap";
 import Axios from "axios";
 
 import url_json from "../data/url.json";
@@ -84,6 +84,7 @@ const Login = () => {
                     <Button
                       variant="info"
                       type="submit"
+                      block
                       onClick={(e) => handle_form(e)}
                     >
                       Enviar

@@ -1,0 +1,33 @@
+.register_container {
+  margin: 0px auto;
+  margin-top: 56px;
+  max-width: 1350px;
+}
+
+.register_container h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  color: #a61b26;
+}
+
+.register_container p {
+  display: flex;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  color: #000000;
+}
+
+.form_section {
+  width: 37%;
+  margin: 0 auto;
+}
+
+.modal_register_h1 {
+  font-size: 1rem;
+}
+
+.modal_register_img {
+  width: 350px;
+  height: 350px;
+}
