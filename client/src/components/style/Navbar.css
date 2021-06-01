@@ -1,0 +1,16 @@
+.navbar_option {
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+.navbar_option:hover {
+    text-decoration: none;
+    color: rgb(192, 5, 5);
+}
+
+.navbar_option_active {
+    color: rgb(192, 5, 5);
+    font-weight: 500;
+    text-decoration: underline rgb(192, 5, 5);
+}

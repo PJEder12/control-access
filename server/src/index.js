@@ -51,6 +51,7 @@ app.use((req, res, next) => {
 // AUTH ROUTES
 const authRoutes = require('./querys/authRequest');
 const registerRoutes = require('./querys/registerRoutes');
+const lastUserRoutes = require('./querys/lastUserRoutes');
 
 // GET APP.USE
 
@@ -60,6 +61,7 @@ const registerRoutes = require('./querys/registerRoutes');
 // AUTH ROUTES APP.USE
 app.use(authRoutes);
 app.use(registerRoutes);
+app.use(lastUserRoutes);
 
 // PORT STATEMENT
 app.listen(52000, () => {
