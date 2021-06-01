@@ -50,6 +50,7 @@ app.use((req, res, next) => {
 
 // AUTH ROUTES
 const authRoutes = require('./querys/authRequest');
+const registerRoutes = require('./querys/registerRoutes');
 
 // GET APP.USE
 
@@ -58,6 +59,7 @@ const authRoutes = require('./querys/authRequest');
 
 // AUTH ROUTES APP.USE
 app.use(authRoutes);
+app.use(registerRoutes);
 
 // PORT STATEMENT
 app.listen(52000, () => {

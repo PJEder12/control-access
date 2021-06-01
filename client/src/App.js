@@ -5,6 +5,7 @@ import Axios from "axios";
 //Pages:
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import LastUser from "./pages/LastUser";
 
 //Components
 import Navbar from "./components/Navbar";
@@ -17,6 +18,7 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Register} />
+        <Route exact path="/lastuser" component={LastUser} />
         <Route exact path="/login" component={Login} />
       </Switch>
     </Router>

@@ -14,7 +14,7 @@ const NavbarComponent = () => {
             <Nav.Link href="/">Registrar usuarios</Nav.Link>
             <Nav.Link href="login">Modificar usuarios</Nav.Link>
             <Nav.Link href="#home">Historial</Nav.Link>
-            <Nav.Link href="#link">En vivo</Nav.Link>
+            <Nav.Link href="/lastuser">En vivo</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
