@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import {withRouter} from "react-router-dom";
 
 //CSS:
 import "./style/LastUser.css";
@@ -16,6 +17,14 @@ const LastUser = () => {
       set_loading_boolean(true)
     });
   }, [loading_boolean]);
+
+  setInterval(() => {
+    Axios.get(last_user_url).then((response) => {
+      console.log(response.data[0].link_img);
+      set_information_users(response.data);
+      set_loading_boolean(true)
+    });
+  }, 5000)
 
   if(loading_boolean) {
     return (
@@ -53,4 +62,4 @@ const LastUser = () => {
  
 };
 
-export default LastUser;
+export default withRouter(LastUser);

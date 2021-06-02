@@ -26,7 +26,7 @@ const Login = () => {
         if (is_auth === "ERROR") {
           console.log("usuario o contraseña incorrecta");
         } else {
-          console.log('SESIÓN INICIADA');
+          window.location.href = '/modifyusers';
         }
       });
     }

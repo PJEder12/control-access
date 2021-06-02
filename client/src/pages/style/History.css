@@ -1,0 +1,57 @@
+.history_container {
+  margin: 0px auto;
+  margin-top: 56px;
+  max-width: 1350px;
+}
+
+.history_container h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  color: #a61b26;
+  padding-top: 0.5em;
+}
+
+.history_container p {
+  display: flex;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  color: #000000;
+}
+
+.filter_history_section {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.start-date-picker, .end-date-picker {
+  margin-top: 0.4em;
+}
+
+.cards_history_section {
+  width: 100%;
+  height: 73vh;
+  margin-top: 1em;
+  overflow-y: hidden;
+  overflow-y: scroll;
+}
+
+.history_card {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  padding-top: 0.5em;
+  background-color: rgb(250, 226, 226);
+  margin-bottom: 0.5em;
+  border-radius: 10px;
+}
+
+.history_card p {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.history_card p span {
+  font-weight: bold;
+  margin-right: 0.5em;
+}

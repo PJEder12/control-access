@@ -122,7 +122,7 @@ const EditUser = (props) => {
           <Form.Group>
             <Form.Label>¿Está autorizado o no?</Form.Label>
             <Form.Control as="select" ref={ref_select}>
-              <option value="2">Asignar persmisos</option>
+              <option value="2">Asignar permisos</option>
               <option value="0">Autorizado</option>
               <option value="1">Vetado</option>
             </Form.Control>

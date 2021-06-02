@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Card } from "react-bootstrap";
+import {withRouter} from "react-router-dom";
 import Axios from "axios";
 
 //CSS
@@ -130,4 +131,4 @@ const ModifyUsers = () => {
   }
 };
 
-export default ModifyUsers;
+export default withRouter(ModifyUsers);
