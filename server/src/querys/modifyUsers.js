@@ -15,4 +15,40 @@ router.get("/api/modifyusers", (req, res, next) => {
   });
 });
 
+router.post("/api/edituser", (req, res, next) => {
+const edit_user_query = `UPDATE INFORMACION_USUARIOS SET hora_inicio='${req.body.hora_inicio}', hora_final='${req.body.hora_final}', id_estado=${req.body.id_estado}  WHERE id=${req.body.id}`;
+
+  console.log(edit_user_query);
+  database.query(edit_user_query, async (err, result) => {
+    if (err) throw err;
+
+    res.end(JSON.stringify("Exitoso"));
+  });
+});
+
+router.post("/api/edituseronlyhours", (req, res, next) => {
+
+  const hora_incio_string = req.body.hora_inicio.toString();
+  const hora_final_string = req.body.hora_final.toString();
+  const edit_user_query = `UPDATE INFORMACION_USUARIOS SET hora_inicio='${hora_incio_string}', hora_final='${hora_final_string}'  WHERE id=${req.body.id}`;
+
+  console.log(edit_user_query);
+  database.query(edit_user_query, async (err, result) => {
+    if (err) throw err;
+
+    res.end(JSON.stringify("Exitoso"));
+  });
+});
+
+router.post("/api/edituseronlyauth", (req, res, next) => {
+  const edit_user_query = `UPDATE INFORMACION_USUARIOS SET id_estado=${req.body.id_estado}  WHERE id=${req.body.id}`;
+
+  console.log(edit_user_query);
+  database.query(edit_user_query, async (err, result) => {
+    if (err) throw err;
+
+    res.end(JSON.stringify("Exitoso"));
+  });
+});
+
 module.exports = router;

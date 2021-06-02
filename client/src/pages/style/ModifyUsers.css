@@ -81,3 +81,8 @@
     margin-right: 2.5em;
     margin-bottom: 1em;
 }
+
+.card_modify_user span {
+    font-weight: bold;
+    margin-right: .3em;
+}
